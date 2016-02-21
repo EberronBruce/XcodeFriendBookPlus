@@ -49,11 +49,59 @@
                     <navigationItem key="navigationItem" id="t73-N3-olP"/>
                     <connections>
                         <outlet property="tableView" destination="8fY-dn-k0r" id="sjZ-cr-eeG"/>
+                        <segue destination="CwI-Bi-Cb0" kind="show" identifier="detailSegue" id="fxN-3F-cir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="225"/>
+            <point key="canvasLocation" x="-210" y="225"/>
+        </scene>
+        <!--Friend Detail View Controller-->
+        <scene sceneID="6rB-ho-xLX">
+            <objects>
+                <viewController id="CwI-Bi-Cb0" customClass="FriendDetailViewController" customModule="FriendBookPlus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jO8-aa-WhR"/>
+                        <viewControllerLayoutGuide type="bottom" id="VYp-lL-6U6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fUb-mT-kY0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2c-Xx-QBD">
+                                <rect key="frame" x="20" y="103" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUG-V8-U6W">
+                                <rect key="frame" x="20" y="189" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALJ-QP-Tma">
+                                <rect key="frame" x="20" y="236" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-B7-sAe">
+                                <rect key="frame" x="20" y="147" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="3eb-B7-sAe" id="jaq-iU-wMy"/>
+                        <outlet property="nameLabel" destination="j2c-Xx-QBD" id="YAf-Tc-gex"/>
+                        <outlet property="phoneLabel" destination="OUG-V8-U6W" id="bGc-Su-QDz"/>
+                        <outlet property="pictureImageView" destination="ALJ-QP-Tma" id="yLW-5n-Zln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJE-Zc-hyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="225"/>
         </scene>
     </scenes>
 </document>

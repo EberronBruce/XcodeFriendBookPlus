@@ -12,6 +12,9 @@ class FriendListViewController: UIViewController,UITableViewDelegate,UITableView
     //The table view connection in the storyboard
     @IBOutlet weak var tableView: UITableView!
     
+    //Create a property for friends
+    var friends = ["Elaine", "George", "Kramer", "Jerry"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,13 +27,29 @@ class FriendListViewController: UIViewController,UITableViewDelegate,UITableView
 
     //This function sets the number of rows in the table view and returns that.
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.friends.count
     }
     //This function sets up the each cell in the table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel!.text = "Your Mom"
+        let friend = self.friends[indexPath.row]
+        cell.textLabel!.text = friend
         return cell
+    }
+    //The code executed when a row is selected in the table view
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //Deselect cells
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        //The sender is passed to teh prepare for seque
+        let friend = self.friends[indexPath.row]
+        self.performSegueWithIdentifier("detailSegue", sender: friend)
+    }
+    //This code executes when the transition happens. So pass variables over to the new view controller
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailVC = segue.destinationViewController as! FriendDetailViewController
+        //get sender from previous functions
+        detailVC.friendName = sender as! String
+        
     }
 
 }
