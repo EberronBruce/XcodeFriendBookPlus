@@ -37,24 +37,28 @@ class FriendListViewController: UIViewController,UITableViewDelegate,UITableView
         elaine.name = "Elaine"
         elaine.phoneNumber = "503-534-7723"
         elaine.birthday = "September 4th"
+        elaine.picture = UIImage(named: "elaine")!
         self.friends.append(elaine)
         
         let george = Friend()
         george.name = "George"
         george.phoneNumber = "503-566-3302"
         george.birthday = "March 18th"
+        george.picture = UIImage(named: "george")!
         self.friends.append(george)
         
         let kramer = Friend()
         kramer.name = "Kramer"
         kramer.phoneNumber = "1-800-324-4321"
         kramer.birthday = "December 1"
+        kramer.picture = UIImage(named: "kramer")!
         self.friends.append(kramer)
         
         let jerry = Friend()
         jerry.name = "Jerry"
         jerry.phoneNumber = "775-754-6909"
         jerry.birthday = "July 1st"
+        jerry.picture = UIImage(named: "jerry")!
         self.friends.append(jerry)
     }
 

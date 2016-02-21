@@ -80,8 +80,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ALJ-QP-Tma">
-                                <rect key="frame" x="20" y="236" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="george" translatesAutoresizingMaskIntoConstraints="NO" id="ALJ-QP-Tma">
+                                <rect key="frame" x="20" y="236" width="331" height="198"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-B7-sAe">
                                 <rect key="frame" x="20" y="147" width="560" height="21"/>
@@ -104,4 +104,7 @@
             <point key="canvasLocation" x="482" y="225"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="george" width="640" height="360"/>
+    </resources>
 </document>
