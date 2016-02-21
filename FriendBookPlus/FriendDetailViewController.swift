@@ -18,7 +18,7 @@ class FriendDetailViewController: UIViewController {
     
     //Use variables to pass information to from the previous view controller
     //This gives time for the view to load and doesnt crash the app
-    var friendName = ""
+    var friend = Friend()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,9 @@ class FriendDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //Once the view loads then assign the variable to the text of the label
-        self.nameLabel.text = self.friendName
+        self.nameLabel.text = self.friend.name
+        self.phoneLabel.text = self.friend.phoneNumber
+        self.birthdayLabel.text = self.friend.birthday
     }
 
 }

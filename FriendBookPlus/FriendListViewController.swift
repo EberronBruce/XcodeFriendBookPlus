@@ -13,16 +13,49 @@ class FriendListViewController: UIViewController,UITableViewDelegate,UITableView
     @IBOutlet weak var tableView: UITableView!
     
     //Create a property for friends
-    var friends = ["Elaine", "George", "Kramer", "Jerry"]
+    var friends = [Friend]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //Call createFriends
+        createFriends()
+        
         //Selecting datasource and delegate to make it the current view controller
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
+    }
+    
+    
+    //This function creates a friend object and adds it to the friends array
+    func createFriends(){
+        //["Elaine", "George", "Kramer", "Jerry"]
+        
+        let elaine = Friend()
+        elaine.name = "Elaine"
+        elaine.phoneNumber = "503-534-7723"
+        elaine.birthday = "September 4th"
+        self.friends.append(elaine)
+        
+        let george = Friend()
+        george.name = "George"
+        george.phoneNumber = "503-566-3302"
+        george.birthday = "March 18th"
+        self.friends.append(george)
+        
+        let kramer = Friend()
+        kramer.name = "Kramer"
+        kramer.phoneNumber = "1-800-324-4321"
+        kramer.birthday = "December 1"
+        self.friends.append(kramer)
+        
+        let jerry = Friend()
+        jerry.name = "Jerry"
+        jerry.phoneNumber = "775-754-6909"
+        jerry.birthday = "July 1st"
+        self.friends.append(jerry)
     }
 
     //This function sets the number of rows in the table view and returns that.
@@ -33,7 +66,7 @@ class FriendListViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let friend = self.friends[indexPath.row]
-        cell.textLabel!.text = friend
+        cell.textLabel!.text = friend.name
         return cell
     }
     //The code executed when a row is selected in the table view
@@ -48,7 +81,7 @@ class FriendListViewController: UIViewController,UITableViewDelegate,UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detailVC = segue.destinationViewController as! FriendDetailViewController
         //get sender from previous functions
-        detailVC.friendName = sender as! String
+        detailVC.friend = sender as! Friend
         
     }
 
